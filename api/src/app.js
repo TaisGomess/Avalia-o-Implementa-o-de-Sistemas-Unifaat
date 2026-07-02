@@ -10,6 +10,8 @@ app.use(express.json());
 
 app.use("/usuarios", usuarioRoutes);
 
+console.log("Rotas de usuários carregadas");
+
 
 app.get("/", (req, res) => {
     res.json({
@@ -35,6 +37,12 @@ app.get("/db", async (req, res) => {
         });
 
     }
+});
+
+app.post("/teste", (req, res) => {
+    res.json({
+        mensagem: "POST funcionando!"
+    });
 });
 
 export default app;
